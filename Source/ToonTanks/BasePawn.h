@@ -38,6 +38,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		int32 EditAnywhere = 11;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float Speed = 20;
 private:
 	UPROPERTY()
 		class UCapsuleComponent* CapsuleComp;
@@ -50,6 +52,5 @@ private:
 
 	UPROPERTY()
 		USceneComponent* ProjectileSpawnPoint;
-	UPROPERTY(EditAnywhere)
-		float Speed = 20;
+	
 };
