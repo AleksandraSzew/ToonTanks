@@ -26,6 +26,18 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UPROPERTY(VisibleInstanceOnly)
+		int32 VisibleInstanceOnlyInt = 5;
+
+	UPROPERTY(VisibleDefaultsOnly)
+		int32 VisibleDefaultOnlyInt = 5;
+
+	UPROPERTY(VisibleAnywhere, Blueprintreadwrite)
+		int32 VisibleAnywhere = 10;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		int32 EditAnywhere = 11;
+
 private:
 	UPROPERTY()
 		class UCapsuleComponent* CapsuleComp;
@@ -38,4 +50,6 @@ private:
 
 	UPROPERTY()
 		USceneComponent* ProjectileSpawnPoint;
+	UPROPERTY(EditAnywhere)
+		float Speed = 20;
 };
