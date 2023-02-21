@@ -26,31 +26,31 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY(VisibleInstanceOnly)
+	/*UPROPERTY(VisibleInstanceOnly)
 		int32 VisibleInstanceOnlyInt = 5;
 
 	UPROPERTY(VisibleDefaultsOnly)
 		int32 VisibleDefaultOnlyInt = 5;
 
-	UPROPERTY(VisibleAnywhere, Blueprintreadwrite)
+	UPROPERTY(VisibleAnywhere, Blueprintreadwrite, Category = "Testing", meta = (AllowPrivateAccess = "true"))
 		int32 VisibleAnywhere = 10;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Testing", meta = (AllowPrivateAccess = "true"))
 		int32 EditAnywhere = 11;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		float Speed = 20;
+		float Speed = 20;*/
 private:
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pawn components", meta = (AllowPrivateAccess = "true"))
 		class UCapsuleComponent* CapsuleComp;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pawn components", meta = (AllowPrivateAccess = "true"))
 		UStaticMeshComponent* BaseMesh;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pawn components", meta = (AllowPrivateAccess = "true"))
 		UStaticMeshComponent* TurretMesh;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pawn components", meta = (AllowPrivateAccess = "true"))
 		USceneComponent* ProjectileSpawnPoint;
 	
 };
