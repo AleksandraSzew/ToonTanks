@@ -25,4 +25,10 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Pawn components")
 	class UCameraComponent* Camera;
 
+	void Move(float value);
+
+public:
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
 };
