@@ -7,6 +7,7 @@
 #include "Camera/CameraComponent.h" 
 #include "Kismet/GameplayStatics.h"
 
+
 ATank::ATank()
 {
 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -17,6 +18,14 @@ ATank::ATank()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(ArmComponent);
+}
+
+void ATank::BeginPlay()
+{
+	Super::BeginPlay();
+
+	PlayerControllerRef = Cast<APlayerController>(GetController());
+
 }
 
 void ATank::Move(float value)
