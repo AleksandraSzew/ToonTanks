@@ -16,6 +16,8 @@ class TOONTANKS_API ATank : public ABasePawn
 public:
 	// Sets default values for this pawn's properties
 	ATank();
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 
 	
 private:
