@@ -5,6 +5,7 @@
 #include "GameFramework/SpringArmComponent.h" 
 #include "Components/InputComponent.h" 
 #include "Camera/CameraComponent.h" 
+#include "Kismet/GameplayStatics.h"
 
 ATank::ATank()
 {
@@ -20,8 +21,13 @@ ATank::ATank()
 
 void ATank::Move(float value)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Move: %f"), value);
+	//UE_LOG(LogTemp, Warning, TEXT("Move: %f"), value);
+	float Delta = UGameplayStatics::GetWorldDeltaSeconds(this);
+	
+	FVector DeltaLocation(0.f);
+	DeltaLocation.X = value*Delta*Speed;
 
+	AddActorLocalOffset(DeltaLocation);
 }
 // Called to bind functionality to input
 void ATank::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
