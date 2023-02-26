@@ -26,6 +26,7 @@ private:
 	class UCameraComponent* Camera;
 
 	void Move(float value);
+	void Turn(float value);
 
 public:
 	// Called to bind functionality to input
@@ -33,5 +34,8 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
 		float Speed = 200.f; 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+		float TurnRate = 100.f;
 
 };

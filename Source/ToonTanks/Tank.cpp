@@ -27,8 +27,19 @@ void ATank::Move(float value)
 	FVector DeltaLocation(0.f);
 	DeltaLocation.X = value*Delta*Speed;
 
-	AddActorLocalOffset(DeltaLocation);
+	AddActorLocalOffset(DeltaLocation, true);
 }
+
+void ATank::Turn(float value)
+{
+	FRotator deltaRotation = FRotator::ZeroRotator;
+	float Delta = UGameplayStatics::GetWorldDeltaSeconds(this);
+	deltaRotation.Yaw = value * Delta * TurnRate;
+	
+	AddActorLocalRotation(deltaRotation,true);
+	
+}
+
 // Called to bind functionality to input
 void ATank::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
@@ -36,5 +47,6 @@ void ATank::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponen
 
 	//binding function to axis maping
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ATank::Move);
+	PlayerInputComponent->BindAxis(TEXT("Turn"), this, & ATank::Turn);
 
 }
