@@ -30,6 +30,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Testing", meta = (AllowPrivateAccess = "true"))
 		int32 EditAnywhere = 11;
 	*/
+protected:
+	void RotateTuret(FVector LookAtTarget);
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pawn components", meta = (AllowPrivateAccess = "true"))
 		class UCapsuleComponent* CapsuleComp;
