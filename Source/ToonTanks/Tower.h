@@ -37,4 +37,6 @@ public:
 		float FireRange = 200.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tower")
 		float TurnRate = 100.f;
+
+	void HandleDestruction();
 };

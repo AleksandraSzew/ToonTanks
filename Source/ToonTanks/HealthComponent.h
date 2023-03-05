@@ -25,6 +25,7 @@ private:
 	UPROPERTY(EditAnywhere)
 	float MaxHealth = 100.f;
 	float Health = 0.f;
+	class AToonTanksGameMode* ToonTanksGameMode;
 
 	UFUNCTION()
 	void DamageTaken(AActor* DamagedActor, float Demage, const UDamageType* DamageType, class AController* Instigator, AActor* DemageCauser);

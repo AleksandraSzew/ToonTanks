@@ -35,8 +35,9 @@ protected:
 public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	APlayerController* PlayerControllerRef;	
-
+	APlayerController* PlayerController;	
+	void HandleDestruction();
+	APlayerController* GetTankPlayerController() const { return PlayerController; }
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
