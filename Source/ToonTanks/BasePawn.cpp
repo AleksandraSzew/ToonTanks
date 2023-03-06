@@ -5,7 +5,6 @@
 #include "Components/CapsuleComponent.h" 
 #include "Components/StaticMeshComponent.h" 
 #include "Kismet/GameplayStatics.h"
-#include "DrawDebugHelpers.h"
 #include "Projectile.h"
 
 // Sets default values
@@ -46,7 +45,6 @@ void ABasePawn::Fire()
 {
 	FVector ProjectileSpawnLocation = ProjectileSpawnPoint->GetComponentLocation();
 	FRotator ProjectileSpawnRotation = ProjectileSpawnPoint->GetComponentRotation();
-	//DrawDebugSphere(GetWorld(), ProjectileSpawnLocation, 25.f, 10, FColor::Cyan, false, 3.f);
 	auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, ProjectileSpawnLocation, ProjectileSpawnRotation);
 	Projectile->SetOwner(this);
 }

@@ -6,7 +6,7 @@
 #include "Components/InputComponent.h" 
 #include "Camera/CameraComponent.h" 
 #include "Kismet/GameplayStatics.h"
-#include "DrawDebugHelpers.h"
+
 
 
 ATank::ATank()
@@ -38,9 +38,7 @@ void ATank::Tick(float DeltaTime)
 	if (PlayerController)
 	{
 		FHitResult HitResult;
-		PlayerController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, HitResult);
-
-		DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 25.f, 12, FColor::Red, false, -1.f);
+		PlayerController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, HitResult);;
 
 		RotateTuret(HitResult.ImpactPoint);
 	}
@@ -56,7 +54,7 @@ void ATank::HandleDestruction()
 }
 void ATank::Move(float value)
 {
-	//UE_LOG(LogTemp, Warning, TEXT("Move: %f"), value);
+	
 	float Delta = UGameplayStatics::GetWorldDeltaSeconds(this);
 	
 	FVector DeltaLocation(0.f);
