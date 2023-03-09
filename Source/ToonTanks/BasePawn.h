@@ -50,4 +50,6 @@ private:
 		TSubclassOf<class AProjectile> ProjectileClass;
 	UPROPERTY(EditAnywhere, Category = "Pawn components")
 		UParticleSystem* DeathParticle;
+	UPROPERTY(EditAnywhere, Category = "Pawn components")
+		class USoundBase* DeathSound;
 };
