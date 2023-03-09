@@ -48,4 +48,6 @@ private:
 		USceneComponent* ProjectileSpawnPoint;
 	UPROPERTY(EditAnywhere, Category = "Projectile components")
 		TSubclassOf<class AProjectile> ProjectileClass;
+	UPROPERTY(EditAnywhere, Category = "Pawn components")
+		UParticleSystem* DeathParticle;
 };
