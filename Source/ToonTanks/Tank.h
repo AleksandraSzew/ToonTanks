@@ -18,7 +18,7 @@ public:
 	ATank();
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
+	bool bAlive = true;
 	
 private:
 
