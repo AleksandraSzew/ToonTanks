@@ -52,4 +52,6 @@ private:
 		UParticleSystem* DeathParticle;
 	UPROPERTY(EditAnywhere, Category = "Pawn components")
 		class USoundBase* DeathSound;
+	UPROPERTY(EditAnywhere, Category = "Projectile components")
+		TSubclassOf<class UCameraShakeBase> DeathCameraShakeClass;
 };
