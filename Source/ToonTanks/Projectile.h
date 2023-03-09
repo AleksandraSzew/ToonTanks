@@ -34,5 +34,6 @@ private:
 		UStaticMeshComponent* ProjectileMesh;
 	UPROPERTY(VisibleAnywhere, Category = "Projectile components")
 		class UProjectileMovementComponent*  ProjectileMovementComponent;
-
+	UPROPERTY(EditAnywhere, Category = "Projectile components")
+	UParticleSystem* HitParticles;
 };
