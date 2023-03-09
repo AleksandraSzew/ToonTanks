@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-
 #include "Projectile.generated.h"
 
 UCLASS()
@@ -31,9 +30,11 @@ public:
 private:
 
 	UPROPERTY(VisibleAnywhere, Category = "Projectile components")
-		UStaticMeshComponent* ProjectileMesh;
+	UStaticMeshComponent* ProjectileMesh;
 	UPROPERTY(VisibleAnywhere, Category = "Projectile components")
-		class UProjectileMovementComponent*  ProjectileMovementComponent;
+	class UProjectileMovementComponent*  ProjectileMovementComponent;
 	UPROPERTY(EditAnywhere, Category = "Projectile components")
 	UParticleSystem* HitParticles;
+	UPROPERTY(EditAnywhere, Category = "Projectile components")
+	class UParticleSystemComponent* TraceParticles;
 };
